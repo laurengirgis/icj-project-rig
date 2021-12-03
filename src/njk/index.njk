@@ -1,0 +1,22 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Index page title{% endblock %}
+
+{% block page_description %}The index search description for this page goes here.{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Cats in Hats</h1>
+  <p>Welcome to Cats In Hats, a portal for cat lovers like you to view cats in their majestic hats.</p>
+  <h2>Cats loop</h2>
+  <p>This loops through data that came from a Google Docs example.</p>
+  <div class="row">
+    {% for cat in cats.cats %}
+      <div class="col">
+        <img src="img/{{ cat.slug }}.jpg" alt="" class="img-fluid">
+        <h3><a href="cats/{{ cat.slug }}.html">{{ cat.head }}</a></h3>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
